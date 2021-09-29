@@ -11,9 +11,9 @@ AS              = msp430-elf-as
 all: led-c.elf led-s.elf 
 
 #additional rules for files
-led-c.elf: ${COMMON_OBJECTS} greenOn-c.o
+led-c.elf: ${COMMON_OBJECTS} greenControl-c.o
 	${CC} ${CFLAGS} ${LDFLAGS} -o $@ $^ ../lib/libTimer.a
-led-s.elf: ${COMMON_OBJECTS} greenOn-s.o
+led-s.elf: ${COMMON_OBJECTS} greenControl-s.o
 	${CC} ${CFLAGS} ${LDFLAGS} -o $@ $^ ../lib/libTimer.a
 
 load-c: led-c.elf
@@ -26,7 +26,7 @@ clean:
 	rm -f *.o *.elf
 
 main.o: led.h
-greenOn-c.o: led.h
+greenControl-c.o: led.h
 wdInterruptHandler.o:  led.h
 
-green-on-c.o: led.h greenOn_c.c
+green-on-c.o: led.h greenControl_c.c

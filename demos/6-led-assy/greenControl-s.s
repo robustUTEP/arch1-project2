@@ -3,10 +3,10 @@
 	.text
 
 
-	.global greenOn
+	.global greenControl
 	.extern P1OUT
 
-greenOn:
+greenControl:
 	cmp #0, r12
 	jz off
 	bis #64, &P1OUT		;or

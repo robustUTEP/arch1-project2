@@ -1,7 +1,7 @@
 #include <msp430.h>
 #include "led.h"
 
-void greenOn(int on)
+void greenControl(int on)
 {
   if (on) {
     P1OUT |= LED_GREEN;
