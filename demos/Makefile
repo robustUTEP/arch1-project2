@@ -20,3 +20,4 @@ clean:
 	(cd 4-modular && make clean)
 	(cd 5* && make clean)
 	(cd sw1* && make clean)
+	rm -rf h lib

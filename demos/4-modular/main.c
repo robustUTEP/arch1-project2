@@ -14,7 +14,7 @@ int main(void) {
   or_sr(0x18);		/* CPU off, GIE on */
 }
 
-void greenOn(int on)
+void greenControl(int on)
 {
   if (on) {
     P1OUT |= LED_GREEN;
@@ -31,9 +31,9 @@ void blinkUpdate() // called every 1/250s to blink with duty cycle 1/blinkLimit
   blinkCount ++;
   if (blinkCount >= blinkLimit) {
     blinkCount = 0;
-    greenOn(1);
+    greenControl(1);
   } else
-    greenOn(0);
+    greenControl(0);
 }
 
 void oncePerSecond() // repeatedly start bright and gradually lower duty cycle, one step/sec
