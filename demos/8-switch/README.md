@@ -5,7 +5,7 @@ released.
 Press S1, and the green LED is illuminated.  Release it, and the red
 LED is illuminated instead.
 
-## Exploration
+## Suggested Activities
 _LED toggle:_  A great initial project would be to modify this program to
 implement a state machine that "toggled" between the red and green LEDs
 each time the button is pressed. The LED should remain illuminated until
@@ -23,6 +23,10 @@ occurs.
 _Time and button interaction:_
 Integrate the timer mechanisms from the blink demo and have the button affect the blink sequence.
 
+_Add button memory:_
+Have the button toggle: Pressing once changes behavior that sticks when the button is released.  Next press changes behavior back.  Hint: add another state variable.
+
 ## Some Advice
 When creating your own variants to the demo programs,
 it's probably a good idea to keep a copy of the original program (or really understand how _git checkout_ works).  
+
