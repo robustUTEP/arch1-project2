@@ -5,24 +5,18 @@ released.
 Press S1, and the green LED is illuminated.  Release it, and the red
 LED is illuminated instead.
 
-## Exploration
-_LED toggle:_  A great initial project would be to modify this program to
-implement a state machine that "toggled" between the red and green LEDs
-each time the button is pressed. The LED should remain illuminated until
-the next time the button is pressed.
+This implementation separates different domains of control to different files:
 
-_Separation of duties:_ Input and output are not always so closely
-connected.  Frequently an input begins a computation that eventually
-results in an output. For example, pressing "next song" on a streaming
-audio player begins a complicated multi-stage process that eventually
-results in a different song being played.  Suggestion: start with
-something simple such as responding to the buttons using interrupts to
-set state variables, and update the LEDs when the timer interrupt
-occurs.  
+* led.c controls the leds based on state vars
+* switches.c responds to the switch and sets the values of state vars
 
-_Time and button interaction:_
-Integrate the timer mechanisms from the blink demo and have the button affect the blink sequence.
+Suggested activity:
 
-## Some Advice
-When creating your own variants to the demo programs,
-it's probably a good idea to keep a copy of the original program (or really understand how _git checkout_ works).  
+Integrate time driven led blink logic whose behavior changes depending
+on state vars representing the button state.  Be sure have separate files for
+* controlling leds based upon led state vars
+* reading buttons and updating button state vars
+* responding to the progress of time (wd timer);  examining button
+state, and updating led state (has own state var/s)
+
+

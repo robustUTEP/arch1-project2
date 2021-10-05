@@ -11,20 +11,10 @@ implement a state machine that "toggled" between the red and green LEDs
 each time the button is pressed. The LED should remain illuminated until
 the next time the button is pressed.
 
-_Separation of duties:_ Input and output are not always so closely
-connected.  Frequently an input begins a computation that eventually
-results in an output. For example, pressing "next song" on a streaming
-audio player begins a complicated multi-stage process that eventually
-results in a different song being played.  Suggestion: start with
-something simple such as responding to the buttons using interrupts to
-set state variables, and update the LEDs when the timer interrupt
-occurs.  
-
 _Time and button interaction:_
-Integrate the timer mechanisms from the blink demo and have the button affect the blink sequence.
+Integrate the timer mechanisms from the blink demo and have the button
+changes a state variable that modifies the blink sequence.
 
-_Add button memory:_
-Have the button toggle: Pressing once changes behavior that sticks when the button is released.  Next press changes behavior back.  Hint: add another state variable.
 
 ## Some Advice
 When creating your own variants to the demo programs,
