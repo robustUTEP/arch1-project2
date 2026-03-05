@@ -1,7 +1,7 @@
 all: libTimer.a
 
 CPU             = msp430g2553
-CFLAGS          = -mmcu=${CPU} 
+CFLAGS          = -mmcu=${CPU} -I/opt/ti/msp430-gcc/include/
 
 #switch the compiler (for the internal make rules)
 CC              = msp430-elf-gcc
