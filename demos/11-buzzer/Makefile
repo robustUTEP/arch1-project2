@@ -15,12 +15,12 @@ buzzer.elf: ${COMMON_OBJECTS} buzzer.o buzzerMain.o ../lib/libTimer.a
 	${CC} ${CFLAGS} ${LDFLAGS} -o $@ $^
 
 load: buzzer.elf
-	msp430loader.sh  $^
-
-clean: $^
-	rm -f *.o *.elf
+	mspdebug ${MSPLOADER_OPTION} "prog $^"
 
 buzzer.c: buzzer.h
 buzzerMain.c: buzzer.h
+clean:
+	rm -f *.o *.elf
+
 
 

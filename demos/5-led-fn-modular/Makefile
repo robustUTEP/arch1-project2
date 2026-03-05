@@ -15,7 +15,7 @@ led.elf: ${COMMON_OBJECTS}
 	${CC} ${CFLAGS} ${LDFLAGS} -o $@ $^ ../lib/libTimer.a
 
 load: led.elf
-	msp430loader.sh $^
+	mspdebug ${MSPLOADER_OPTION} "prog $^"
 
 clean:
 	rm -f *.o *.elf

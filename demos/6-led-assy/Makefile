@@ -17,10 +17,10 @@ led-s.elf: ${COMMON_OBJECTS} greenControl-s.o
 	${CC} ${CFLAGS} ${LDFLAGS} -o $@ $^ ../lib/libTimer.a
 
 load-c: led-c.elf
-	msp430loader.sh $^
+	mspdebug ${MSPLOADER_OPTION} "prog $^"
 
 load-s: led-s.elf 
-	msp430loader.sh $^
+	mspdebug ${MSPLOADER_OPTION} "prog $^"
 
 clean:
 	rm -f *.o *.elf

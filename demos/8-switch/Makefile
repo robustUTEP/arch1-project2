@@ -15,7 +15,7 @@ button.elf: ${COMMON_OBJECTS} ../lib/libTimer.a
 	${CC} ${CFLAGS} ${LDFLAGS} -o $@ $^
 
 load: button.elf
-	msp430loader.sh $^
+	mspdebug ${MSPLOADER_OPTION} "prog $^"
 
 clean:
 	rm -f *.o *.elf
